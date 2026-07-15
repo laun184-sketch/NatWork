@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cha Chaan Teng</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Shippori+Antique+B1&display=swap" rel="stylesheet">
+<style>
+
+    body {
+        margin: 0;
+        font-family: 'Karla', sans-serif;
+        background: lightgray;
+        color: #000;
+    }
+
+    /* ---- back-to-work bar ---- */
+
+    .topbar {
+        padding: 20px 30px;
+        border-bottom: 1px solid #000;
+    }
+
+    .topbar .back {
+        display: inline-block;
+        font-size: 13px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .topbar .back:hover {
+        color: blue;
+    }
+
+    /* ---- panel, split into columns ---- */
+
+    .panel {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 30px 0;
+    }
+
+    .panel .col {
+        flex: 1;
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
+
+    .panel .col.desc-col {
+        flex: 2;
+    }
+
+    .panel .col:last-child {
+        border-right: none;
+    }
+
+    .panel h1 {
+        font-family: 'Shippori Antique B1', sans-serif;
+        font-size: 24px;
+        margin: 0 0 4px 0;
+        line-height: 1.2;
+    }
+
+    .panel .meta {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 0;
+        color: #555;
+    }
+
+    .panel .desc {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .panel .details {
+        font-size: 13px;
+        line-height: 2;
+    }
+
+    .panel .details b {
+        display: inline-block;
+        width: 80px;
+        font-weight: 600;
+    }
+
+    /* ---- project images below the panel ---- */
+
+    .content {
+        padding: 50px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        max-width: 800px;
+    }
+
+    .content img, video {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .content p.caption {
+        font-size: 12px;
+        color: #777;
+        margin: -12px 0 0 0;
+    }
+
+</style>
+</head>
+<body>
+
+    <div class="topbar">
+        <a class="back" href="index.html">&larr; Back to work</a>
+    </div>
+
+    <div class="panel">
+        <div class="col">
+            <h1>Understanding Cha Chaan Teng (2025)</h1>
+            <p class="meta">Book Formatting & Binding</p>
+        </div>
+
+        <div class="col desc-col">
+            <p class="desc">
+            This 89-page spiral bound 5.5" × 8.5" book
+            explores the stories behind Hong Kong’s
+            most iconic comfort foods and the cha
+            chaan tengs that shaped everyday life. Most
+            of the text is adapted from the Wikipedia
+            page titled “Cha chaan teng,” then edited
+            and arranged to create a clear narrative.
+            The visual design shifts throughout with
+            playful spreads, menu inspired layouts, and
+            straightforward informational pages that
+            reflect the tone of each section. Warm
+            imagery and thoughtful typography invite
+            readers to experience the charm of Hong
+            Kong’s café culture and leave with a deeper
+            appreciation for its culinary identity.
+            </p>
+        </div>
+
+        <div class="col">
+            <div class="details">
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <img src="cct-1.jpg">
+        <video src="cct-2.mov" autoplay loop muted playsinline></video>
+        <img src="cct-3.jpg">
+        <img src="cct-4.jpg">
+    </div>
+
+</body>
+</html>

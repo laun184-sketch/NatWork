@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natalie Lau</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Shippori+Antique+B1&display=swap" rel="stylesheet">
+<style>
+
+    body {
+        margin: 0;
+        font-family: 'Karla', sans-serif;
+        background: #fff;
+        color: #000;
+    }
+
+    /* ---- left side panel ---- */
+
+    .panel {
+        width: 300px;
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .panel h1 {
+        font-family: 'Shippori Antique B1', sans-serif;
+        font-size: 26px;
+        margin: 0 0 4px 0;
+    }
+
+    .panel .role {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 0 0 20px 0;
+    }
+
+    .panel .bio {
+        font-size: 14px;
+        line-height: 1.3;
+        margin: 0 0 30px 0;
+    }
+
+    .work a {
+        display: block;
+        color: blue;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 10px 0;
+        border-bottom: 1px solid #000;
+    }
+
+    .work a:hover {
+        font-weight: bold;
+        color: blue;
+    }
+
+    .contact {
+        margin-top: auto;
+        font-size: 13px;
+        line-height: 2;
+    }
+
+    .contact a {
+        color: blue;
+    }
+
+    /* ---- right side: project gallery ---- */
+
+    .gallery {
+        position: relative;
+        margin-left: 280px;
+        height: 100vh;
+        overflow-y: auto;
+        box-sizing: border-box;
+        padding: 50px;
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    .col {
+        flex: 1;
+        min-width: 0;        
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .cell img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        opacity: 0.30;          
+        pointer-events: none;
+    }
+
+    .panel:has(a.p1:hover) ~ .gallery .cell.c1 img,
+    .panel:has(a.p2:hover) ~ .gallery .cell.c2 img,
+    .panel:has(a.p3:hover) ~ .gallery .cell.c3 img,
+    .panel:has(a.p4:hover) ~ .gallery .cell.c4 img,
+    .panel:has(a.p5:hover) ~ .gallery .cell.c5 img,
+    .panel:has(a.p6:hover) ~ .gallery .cell.c6 img {
+        opacity: 1;
+    }
+
+</style>
+</head>
+<body>
+
+    <div class="panel">
+        <h1>Natalie Lau</h1>
+        <p class="role">Graphic Design &amp; Storytelling</p>
+        <p class="bio">Based in New York. Pursuing a BFA in Communication Design at Parsons.<br><br>Aiming to create engaging visual experiences across print, digital, and physical platforms.</p>
+
+        <div class="work">
+            <a class="p1" href="in-n-out.html">In &amp; Out (2025)</a>
+            <a class="p2" href="cha-chaan-teng.html">Understanding <br> Cha Chaan Teng (2025)</a>
+            <a class="p3" href="can-you-hear-me.html">Can You Hear Me? (2026)</a>
+            <a class="p4" href="love-at-first-sight.html">Love at First Sight (2025)</a>
+            <a class="p5" href="ways-of-arranging.html">Ways of Arranging (2026)</a>
+            <a class="p6" href="switch-it-up.html">Switch it Up Series (2026)</a>
+        </div>
+
+        <div class="contact">
+            <div>natalielaucreativeworks@gmail.com</div>
+            <div><a href="https://www.instagram.com/launkkei/">Instagram</a> &nbsp;/&nbsp; <a href="Natalie-Lau-Resume-Fall2026.png">PDF résumé</a></div>
+        </div>
+    </div>
+
+    <div class="gallery" id="gallery">
+        <div class="cell c1"><img src="in-n-out.gif"></div>
+        <div class="cell c2"><img src="cha-chaan-teng.jpg"></div>
+        <div class="cell c3"><img src="can-you-hear-me.gif"></div>
+        <div class="cell c4"><img src="love-at-first-sight.png"></div>
+        <div class="cell c5"><img src="ways-of-arranging.gif"></div>
+        <div class="cell c6"><video src="siu-0.mov" autoplay loop muted playsinline></video></div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const gallery = document.getElementById('gallery');
+            const cells = Array.from(gallery.children);
+            const colCount = 3;
+            const cols = [];
+
+            gallery.innerHTML = '';
+            for (let i = 0; i < colCount; i++) {
+                const col = document.createElement('div');
+                col.className = 'col';
+                gallery.appendChild(col);
+                cols.push(col);
+            }
+
+            cells.forEach(cell => {
+                const shortest = cols.reduce((a, b) => a.offsetHeight <= b.offsetHeight ? a : b);
+                shortest.appendChild(cell);
+            });
+        });
+    </script>
+
+</body>
+</html>
